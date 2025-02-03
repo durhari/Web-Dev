@@ -1,0 +1,50 @@
+/* Commented out existing li styling */
+/* li { list-style-type: none; } */
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+nav {
+    display: inline-block;
+    width: 80%;
+}
+
+nav img {
+    width: 10%;
+}
+
+/* Updated grid layout */
+.grid {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.grid img {
+    width: 100%;
+}
+
+/* Updated flex layout */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Fix contrast issues */
+body {
+    background: #fff;
+    color: #333;
+}
