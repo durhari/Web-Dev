@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Preview</title>
+    <style>
+        #image {
+            width: 400px;
+            height: 200px;
+            border: 2px solid black;
+            background-color: #f3f3f3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+        .preview {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="image">Hover over an image below to display here.</div>
+
+    <img class="preview" src="image1.jpg" alt="Image 1 Description" onmouseover="upDate(this)" onmouseout="undo()">
+    <img class="preview" src="image2.jpg" alt="Image 2 Description" onmouseover="upDate(this)" onmouseout="undo()">
+    <img class="preview" src="image3.jpg" alt="Image 3 Description" onmouseover="upDate(this)" onmouseout="undo()">
+
+    <script>
+        function upDate(previewPic) {
+            console.log("Event triggered! Hovering over:", previewPic.src);
+
+            let imageDiv = document.getElementById("image");
+
+            // Update background image
+            imageDiv.style.backgroundImage = "url('" + previewPic.src + "')";
+            
+            // Update text content
+            imageDiv.innerHTML = previewPic.alt;
+
+            console.log("Updated text:", previewPic.alt);
+            console.log("Updated background:", previewPic.src);
+        }
+
+        function undo() {
+            let imageDiv = document.getElementById("image");
+
+            // Reset background image
+            imageDiv.style.backgroundImage = "url('')";
+            
+            // Reset text
+            imageDiv.innerHTML = "Hover over an image below to display here.";
+
+            console.log("Reverted changes.");
+        }
+    </script>
+
+</body>
+</html>
