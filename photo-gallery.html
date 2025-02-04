@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Photo Gallery</title>
+</head>
+<body>
+    <h1>My Photo Gallery</h1>
+    <div id="gallery">
+        <img src="image1.jpg" alt="Description of image 1" tabindex="0" />
+        <img src="image2.jpg" alt="Description of image 2" tabindex="0" />
+        <img src="image3.jpg" alt="Description of image 3" tabindex="0" />
+        <img src="image4.jpg" alt="Description of image 4" tabindex="0" />
+        <img src="image5.jpg" alt="Description of image 5" tabindex="0" />
+        <img src="image6.jpg" alt="Description of image 6" tabindex="0" />
+    </div>
+
+    <script>
+        function handleFocus(event) {
+            console.log("Image focused:", event.target);
+            event.target.style.border = "2px solid blue";
+        }
+
+        function handleBlur(event) {
+            console.log("Image lost focus:", event.target);
+            event.target.style.border = "none";
+        }
+
+        function addTabFocusAttribute() {
+            let images = document.querySelectorAll("img");
+            images.forEach((image, index) => {
+                image.setAttribute("tabindex", index + 1);
+            });
+            console.log("Tab index added to images");
+        }
+
+        window.onload = function () {
+            addTabFocusAttribute();
+            let images = document.querySelectorAll("img");
+            images.forEach(image => {
+                image.addEventListener("mouseover", function () {
+                    console.log("Mouse over:", image);
+                });
+                image.addEventListener("mouseleave", function () {
+                    console.log("Mouse leave:", image);
+                });
+                image.addEventListener("focus", handleFocus);
+                image.addEventListener("blur", handleBlur);
+            });
+            console.log("Page loaded successfully");
+        }
+    </script>
+</body>
+</html>
