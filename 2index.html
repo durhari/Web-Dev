@@ -1,0 +1,29 @@
+/* Default mobile-first styles */
+div {
+    width: 100%;
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Media query for tablets and above */
+@media screen and (min-width: 768px) {
+    div {
+        width: 48%;
+        margin: 1%;
+    }
+    img {
+        max-width: 100%;
+    }
+}
+
+/* Media query for desktops and above */
+@media screen and (min-width: 1024px) {
+    div {
+        width: 30%;
+        margin: 1%;
+    }
+}
