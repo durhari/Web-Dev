@@ -1,67 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Preview</title>
-    <style>
-        #image {
-            width: 400px;
-            height: 200px;
-            border: 2px solid black;
-            background-color: #f3f3f3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            text-align: center;
-            background-size: cover;
-            background-position: center;
-        }
-        .preview {
-            width: 100px;
-            height: 100px;
-            margin: 10px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colors</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+  <header>
+    <h1 id="top">Colors!</h1>
+  </header>
 
-    <div id="image">Hover over an image below to display here.</div>
+  <main>
+    <h2>Basic Media Queries</h2>
+    <p>In this assignment you will add two media queries to the css file.</p>
+    <ul>
+      <li>The first media query should trigger at 772px and change the layout of the divs to be 45% of the viewport width. The images should have a maximum height of 30% of the viewport height.</li>
 
-    <img class="preview" src="image1.jpg" alt="Image 1 Description" onmouseover="upDate(this)" onmouseout="undo()">
-    <img class="preview" src="image2.jpg" alt="Image 2 Description" onmouseover="upDate(this)" onmouseout="undo()">
-    <img class="preview" src="image3.jpg" alt="Image 3 Description" onmouseover="upDate(this)" onmouseout="undo()">
+      <li>The second media query should trigger at 998px and change the layout of the divs to be 30% of the viewport width.</li>
+    </ul>
+    <p>You will need to make additional changes to ensure that the divs appear next to each other and that the images are contained within the divs.  Some of these properties include display, width and max-height.</p>
 
-    <script>
-        function upDate(previewPic) {
-            console.log("Event triggered! Hovering over:", previewPic.src);
+    <div>
+      <img src="images/Red.jpeg" alt="Red" width="200">
+      <p class = "label">Red</p>
+    </div>
+    <div>
+      <img src="images/Orange.png" alt="Orange" width="200">
+      <p class = "label">Orange</p>
+    </div>
+    <div>
+      <img src="images/Yellow.png" alt="Yellow" width="200">
+      <p class = "label">Yellow</p>
+    </div>
+    <div>
+      <img src="images/Green.png" alt="Green" width="200">
+      <p class = "label">Green</p>
+    </div>
+    <div>
+      <img src="images/Blue.png" alt="Blue" width="200">
+      <p class = "label">Blue</p>
+    </div>
+    <div>
+      <img src="images/Indigo.jpeg" alt="Indigo" width="200">
+      <p class = "label">Indigo</p>
+    </div>
+    <div>
+      <img src="images/Purple.png" alt="Purple" width="200">
+      <p class = "label">Purple</p>
+    </div>
+    <div>
+      <img src="images/Pink.jpeg" alt="Pink" width="200">
+      <p class = "label">Pink</p>
+    </div>
+    <div>
+      <img src="images/White.png" alt="White" width="200">
+      <p class = "label">White</p>
+    </div>
+    </div>
+  </main>
 
-            let imageDiv = document.getElementById("image");
-
-            // Update background image
-            imageDiv.style.backgroundImage = "url('" + previewPic.src + "')";
-            
-            // Update text content
-            imageDiv.innerHTML = previewPic.alt;
-
-            console.log("Updated text:", previewPic.alt);
-            console.log("Updated background:", previewPic.src);
-        }
-
-        function undo() {
-            let imageDiv = document.getElementById("image");
-
-            // Reset background image
-            imageDiv.style.backgroundImage = "url('')";
-            
-            // Reset text
-            imageDiv.innerHTML = "Hover over an image below to display here.";
-
-            console.log("Reverted changes.");
-        }
-    </script>
-
+  <footer>
+    <a href="#top">Jump to the Top</a>
+  </footer>
 </body>
+
 </html>
